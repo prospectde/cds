@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiktive Bank AG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .lang-switch select {
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
+        }
+        nav {
+            background-color: #00509e;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 10px;
+        }
+        main {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .feature {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 280px;
+            max-width: 320px;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            main {
+                padding: 10px;
+            }
+        }
+    
+        .page-intro {
+            max-width: 980px;
+            margin: 0 auto 25px;
+        }
+        .page-intro h2 {
+            margin-bottom: 8px;
+        }
+        .section-title {
+            max-width: 980px;
+            margin: 35px auto 15px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .info-card h3 {
+            margin-top: 0;
+            color: #003366;
+        }
+        .info-card ul, .info-card ol {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        .notice {
+            max-width: 940px;
+            margin: 25px auto 0;
+            background: #eaf3fb;
+            border-left: 5px solid #00509e;
+            padding: 18px 20px;
+            border-radius: 6px;
+        }
+        .cta {
+            display: inline-block;
+            margin-top: 12px;
+            background: #00509e;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+        .cta:hover {
+            background: #003f7d;
+        }
+        .product-meta {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+    </style>
+  <script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.mypurecloud.ie/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euw1',
+    deploymentId: 'fb9bc91d-52c8-4d35-81e7-f51e742f37f7'
+  });
+  
+</script>
+    <script>
+    // Konfigurierbarer Ton über base64 string
+    function beep() {
+        var snd = new Audio("data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");  
+        snd.play();
+    }
+
+    let lastNotificationTime = 0;
+    const minInterval = 5000; 
+    function showNotification() {
+        const now = Date.now();
+        if (lastNotificationTime != 0 && now - lastNotificationTime < minInterval) {
+            return;
+        }
+        lastNotificationTime = now;
+        new Notification("Neue Nachricht");
+    }
+     
+    function notify() {
+        // console.log("Message received event detected!"); // Logging für Tests
+        // Use browser notifications instead of audio
+        if (Notification.permission === "granted") {
+            //new Notification("Neue Nachricht");
+            showNotification();
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    //new Notification("Neue Nachricht");
+                    showNotification();
+                }
+            });
+        }
+    }    
+        Genesys(    
+            "subscribe", 
+            "MessagingService.sendingMessage", 
+            (e) => {
+                console.log("Message sending event detected!", e);  // Logging für Tests
+                beep();
+                const now = Date.now();
+                lastNotificationTime = now;
+            }
+        );
+
+        Genesys(
+            "subscribe", 
+            "MessagingService.conversationCleared", 
+            (e) => {
+                const now = Date.now();
+                lastNotificationTime = now;
+                console.log("conversation cleared event detected!", e);  // Logging für Tests
+                beep();
+            }
+        );
+
+        Genesys(
+            "subscribe", 
+            "MessagingService.sessionCleared", 
+            (e) => {
+                const now = Date.now();
+                lastNotificationTime = now;
+                console.log("session cleared event detected!", e);  // Logging für Tests
+                beep();
+            }
+        );
+
+        Genesys(
+            "subscribe", 
+            "Messenger.closed", 
+            (e) => {
+                const now = Date.now();
+                lastNotificationTime = now;
+                console.log("Messenger widget closed sending event detected!", e);  // Logging für Tests
+                beep();
+            }
+        );
+        
+        Genesys(
+            'subscribe',
+            "MessagingService.messagesReceived",
+            (e) => {
+                notify();
+            }
+        );
+
+        /*
+        // Messenger gelöschter Chat event für audio Benachrichtigung für beendete & gelöschte Konversation Konversation
+        Genesys("subscribe", "Messenger.cleared", function(){});
+
+        // Anderes Benachrichtigungsverhalten je nach geöffnetem/geschlossenem Messenger Widget
+        Genesys("subscribe", "Messenger.closed", function(){});
+        
+        // Weitere events: https://developer.genesys.cloud/commdigital/digital/webmessaging/messengersdk/SDKCommandsEvents/messengerPlugin
+        */
+    
+    </script>
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            applyLanguage(lang);
+        }
+
+        function applyLanguage(lang) {
+            const activeLang = lang && lang.startsWith('en') ? 'en' : 'de';
+            document.documentElement.lang = activeLang;
+            const select = document.getElementById('language-select');
+            if (select) select.value = activeLang;
+
+            document.querySelectorAll('[data-de][data-en]').forEach(function(el) {
+                el.textContent = activeLang === 'en' ? el.dataset.en : el.dataset.de;
+            });
+
+            document.querySelectorAll('[data-href-de][data-href-en]').forEach(function(el) {
+                el.href = activeLang === 'en' ? el.dataset.hrefEn : el.dataset.hrefDe;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language || navigator.userLanguage || 'de';
+            applyLanguage(savedLang || browserLang);
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="lang-switch">
+        <label for="language-select" style="color:white;" data-de="Sprache / Language:" data-en="Language / Sprache:">Sprache / Language:</label>
+        <select id="language-select" onchange="setLanguage(this.value)">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <h1>Fiktive Bank AG</h1>
+    <p data-de="Ihre vertrauensvolle Partnerin in allen Finanzfragen"
+       data-en="Your trusted partner for all financial matters">
+       Ihre vertrauensvolle Partnerin in allen Finanzfragen
+    </p>
+</header>
+
+<nav>
+    <a href="index.html" data-de="Startseite" data-en="Home">Startseite</a>
+    <a href="produkte.html" data-de="Produkte" data-en="Products">Produkte</a>
+    <a href="konto-eroeffnen.html" data-de="Konto eröffnen" data-en="Open Account">Konto eröffnen</a>
+    <a href="https://form.jotform.com/262573015077052" data-de="Kontakt" data-en="Contact">Kontakt</a>
+</nav>
+
+
+<main>
+    <div class="page-intro">
+        <h2 data-de="Willkommen bei der Fiktiven Bank AG" data-en="Welcome to Fictive Bank AG">
+            Willkommen bei der Fiktiven Bank AG
+        </h2>
+        <p data-de="Wir bieten moderne Banklösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind. Vertrauen, Sicherheit und Innovation stehen bei uns im Mittelpunkt."
+           data-en="We offer modern banking solutions tailored to your individual needs. Trust, security and innovation are at the heart of everything we do.">
+           Wir bieten moderne Banklösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind. Vertrauen, Sicherheit und Innovation stehen bei uns im Mittelpunkt.
+        </p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3 data-de="Online-Banking" data-en="Online Banking">Online-Banking</h3>
+            <p data-de="Verwalten Sie Ihre Finanzen bequem von überall aus – sicher und rund um die Uhr verfügbar."
+               data-en="Manage your finances conveniently from anywhere – securely and around the clock.">
+               Verwalten Sie Ihre Finanzen bequem von überall aus – sicher und rund um die Uhr verfügbar.
+            </p>
+        </div>
+        <div class="feature">
+            <h3 data-de="Girokonto" data-en="Checking Account">Girokonto</h3>
+            <p data-de="Ein flexibles Girokonto für Ihren Alltag – mit Karte, Online-Banking und modernen Bezahlmöglichkeiten."
+               data-en="A flexible checking account for everyday banking – with card, online banking and modern payment options.">
+               Ein flexibles Girokonto für Ihren Alltag – mit Karte, Online-Banking und modernen Bezahlmöglichkeiten.
+            </p>
+        </div>
+        <div class="feature">
+            <h3 data-de="Kredite" data-en="Loans">Kredite</h3>
+            <p data-de="Finanzierungslösungen für persönliche Wünsche, größere Anschaffungen oder Immobilien."
+               data-en="Financing solutions for personal goals, larger purchases or property.">
+               Finanzierungslösungen für persönliche Wünsche, größere Anschaffungen oder Immobilien.
+            </p>
+        </div>
+    </div>
+</main>
+
+
+<footer>
+    <span data-de="&copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten"
+          data-en="&copy; 2026 Fictive Bank AG – All rights reserved">
+          &copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten
+    </span>
+</footer>
+
+</body>
+</html>
