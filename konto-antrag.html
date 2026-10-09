@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontoantrag | Fiktive Bank AG</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .lang-switch select {
+            padding: 6px 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        nav {
+            background: #00509e;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 10px;
+        }
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 25px 20px 50px;
+        }
+        .intro {
+            margin-bottom: 25px;
+        }
+        .intro h2 {
+            color: #003366;
+            margin-bottom: 8px;
+        }
+        .progress {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 28px;
+        }
+        .progress span {
+            background: #eaf3fb;
+            color: #003366;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: .9rem;
+            font-weight: bold;
+        }
+        form {
+            display: grid;
+            gap: 22px;
+        }
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 22px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,.08);
+        }
+        legend {
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #003366;
+            padding-bottom: 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 20px;
+        }
+        .full {
+            grid-column: 1 / -1;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #b8c1cc;
+            border-radius: 5px;
+            font: inherit;
+            background: #fff;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 3px solid rgba(0,80,158,.15);
+            border-color: #00509e;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .check-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .check-row input {
+            width: auto;
+            margin-top: 3px;
+        }
+        .check-row label {
+            font-weight: normal;
+            margin: 0;
+        }
+        .hint {
+            color: #666;
+            font-size: .9rem;
+            margin-top: 5px;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+        .btn {
+            border: 0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: #00509e;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #003f7d;
+        }
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #222;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .notice {
+            background: #eaf3fb;
+            border-left: 5px solid #00509e;
+            padding: 16px 18px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .success {
+            display: none;
+            background: #eef8ee;
+            border-left: 5px solid #2e7d32;
+            padding: 16px 18px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 15px 20px;
+        }
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
+            .full { grid-column: auto; }
+            nav a { display: block; margin: 7px 0; }
+            .lang-switch {
+                position: static;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8">
+    (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.mypurecloud.ie/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euw1',
+    deploymentId: '614e5d38-4a5f-412c-a953-a8c365286dc5'
+  });
+  
+</script>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            applyLanguage(lang);
+        }
+
+        function applyLanguage(lang) {
+            const activeLang = lang && lang.startsWith('en') ? 'en' : 'de';
+            document.documentElement.lang = activeLang;
+            const select = document.getElementById('language-select');
+            if (select) select.value = activeLang;
+
+            document.querySelectorAll('[data-de][data-en]').forEach(function(el) {
+                el.textContent = activeLang === 'en' ? el.dataset.en : el.dataset.de;
+            });
+
+            document.querySelectorAll('[data-placeholder-de][data-placeholder-en]').forEach(function(el) {
+                el.placeholder = activeLang === 'en'
+                    ? el.dataset.placeholderEn
+                    : el.dataset.placeholderDe;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language || navigator.userLanguage || 'de';
+            applyLanguage(savedLang || browserLang);
+
+            const form = document.getElementById('account-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                if (!form.reportValidity()) return;
+
+                const success = document.getElementById('success-message');
+                success.style.display = 'block';
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="lang-switch">
+        <label for="language-select" style="color:white;"
+               data-de="Sprache / Language:" data-en="Language / Sprache:">Sprache / Language:</label>
+        <select id="language-select" onchange="setLanguage(this.value)">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <h1>Fiktive Bank AG</h1>
+    <p data-de="Ihr Antrag für ein neues Girokonto"
+       data-en="Your application for a new checking account">
+        Ihr Antrag für ein neues Girokonto
+    </p>
+</header>
+
+<nav>
+    <a href="index.html" data-de="Startseite" data-en="Home">Startseite</a>
+    <a href="produkte.html" data-de="Produkte" data-en="Products">Produkte</a>
+    <a href="konto-eroeffnen.html" data-de="Konto eröffnen" data-en="Open Account">Konto eröffnen</a>
+    <a href="https://form.jotform.com/262573015077052" data-de="Kontakt" data-en="Contact">Kontakt</a>
+</nav>
+
+<main>
+    <section class="intro">
+        <h2 data-de="Konto eröffnen" data-en="Open an Account">Konto eröffnen</h2>
+        <p data-de="Bitte füllen Sie die folgenden Angaben aus. Pflichtfelder sind mit * gekennzeichnet."
+           data-en="Please complete the following information. Required fields are marked with *.">
+            Bitte füllen Sie die folgenden Angaben aus. Pflichtfelder sind mit * gekennzeichnet.
+        </p>
+    </section>
+
+    <div class="notice">
+        <strong data-de="Demo-Hinweis:" data-en="Demo notice:">Demo-Hinweis:</strong>
+        <span data-de=" Dieses Formular dient als Beispielseite. Es überträgt oder speichert keine Daten auf einem Server."
+              data-en=" This form is a sample page. It does not transmit or store data on a server.">
+            Dieses Formular dient als Beispielseite. Es überträgt oder speichert keine Daten auf einem Server.
+        </span>
+    </div>
+
+    <div class="progress" aria-label="Schritte der Kontoeröffnung">
+        <span data-de="1. Persönliche Daten" data-en="1. Personal details">1. Persönliche Daten</span>
+        <span data-de="2. Adresse & Kontakt" data-en="2. Address & contact">2. Adresse & Kontakt</span>
+        <span data-de="3. Beruf & Steuern" data-en="3. Employment & tax">3. Beruf & Steuern</span>
+        <span data-de="4. Kontoauswahl" data-en="4. Account selection">4. Kontoauswahl</span>
+    </div>
+
+    <form id="account-form" novalidate>
+        <fieldset>
+            <legend data-de="Persönliche Angaben" data-en="Personal Details">Persönliche Angaben</legend>
+            <div class="grid">
+                <div>
+                    <label for="salutation" data-de="Anrede *" data-en="Salutation *">Anrede *</label>
+                    <select id="salutation" name="salutation" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="frau">Frau</option>
+                        <option value="herr">Herr</option>
+                        <option value="divers">Divers</option>
+                        <option value="keine">Keine Angabe</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="title" data-de="Titel" data-en="Title">Titel</label>
+                    <input id="title" name="title" type="text">
+                </div>
+                <div>
+                    <label for="first-name" data-de="Vorname *" data-en="First name *">Vorname *</label>
+                    <input id="first-name" name="firstName" type="text" autocomplete="given-name" required>
+                </div>
+                <div>
+                    <label for="last-name" data-de="Nachname *" data-en="Last name *">Nachname *</label>
+                    <input id="last-name" name="lastName" type="text" autocomplete="family-name" required>
+                </div>
+                <div>
+                    <label for="birth-date" data-de="Geburtsdatum *" data-en="Date of birth *">Geburtsdatum *</label>
+                    <input id="birth-date" name="birthDate" type="date" required>
+                </div>
+                <div>
+                    <label for="birth-place" data-de="Geburtsort *" data-en="Place of birth *">Geburtsort *</label>
+                    <input id="birth-place" name="birthPlace" type="text" required>
+                </div>
+                <div>
+                    <label for="nationality" data-de="Staatsangehörigkeit *" data-en="Nationality *">Staatsangehörigkeit *</label>
+                    <input id="nationality" name="nationality" type="text" required>
+                </div>
+                <div>
+                    <label for="marital-status" data-de="Familienstand" data-en="Marital status">Familienstand</label>
+                    <select id="marital-status" name="maritalStatus">
+                        <option value="">Bitte wählen</option>
+                        <option value="ledig">Ledig</option>
+                        <option value="verheiratet">Verheiratet</option>
+                        <option value="geschieden">Geschieden</option>
+                        <option value="verwitwet">Verwitwet</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend data-de="Adresse und Kontakt" data-en="Address and Contact">Adresse und Kontakt</legend>
+            <div class="grid">
+                <div class="full">
+                    <label for="street" data-de="Straße und Hausnummer *" data-en="Street and house number *">Straße und Hausnummer *</label>
+                    <input id="street" name="street" type="text" autocomplete="street-address" required>
+                </div>
+                <div>
+                    <label for="postal-code" data-de="PLZ *" data-en="Postal code *">PLZ *</label>
+                    <input id="postal-code" name="postalCode" type="text" inputmode="numeric" autocomplete="postal-code" required>
+                </div>
+                <div>
+                    <label for="city" data-de="Ort *" data-en="City *">Ort *</label>
+                    <input id="city" name="city" type="text" autocomplete="address-level2" required>
+                </div>
+                <div>
+                    <label for="country" data-de="Land *" data-en="Country *">Land *</label>
+                    <input id="country" name="country" type="text" autocomplete="country-name" value="Deutschland" required>
+                </div>
+                <div>
+                    <label for="phone" data-de="Mobilnummer *" data-en="Mobile number *">Mobilnummer *</label>
+                    <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                </div>
+                <div class="full">
+                    <label for="email" data-de="E-Mail-Adresse *" data-en="Email address *">E-Mail-Adresse *</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend data-de="Beruf und steuerliche Angaben" data-en="Employment and Tax Information">Beruf und steuerliche Angaben</legend>
+            <div class="grid">
+                <div>
+                    <label for="employment" data-de="Beschäftigungsstatus *" data-en="Employment status *">Beschäftigungsstatus *</label>
+                    <select id="employment" name="employment" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="angestellt">Angestellt</option>
+                        <option value="selbststaendig">Selbstständig</option>
+                        <option value="student">Student/in</option>
+                        <option value="rentner">Rentner/in</option>
+                        <option value="arbeitssuchend">Arbeitssuchend</option>
+                        <option value="sonstige">Sonstige</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="occupation" data-de="Beruf/Tätigkeit" data-en="Occupation">Beruf/Tätigkeit</label>
+                    <input id="occupation" name="occupation" type="text">
+                </div>
+                <div>
+                    <label for="income" data-de="Monatliches Nettoeinkommen" data-en="Monthly net income">Monatliches Nettoeinkommen</label>
+                    <select id="income" name="income">
+                        <option value="">Bitte wählen</option>
+                        <option value="under1000">unter 1.000 €</option>
+                        <option value="1000-2000">1.000–2.000 €</option>
+                        <option value="2000-3000">2.000–3.000 €</option>
+                        <option value="3000-5000">3.000–5.000 €</option>
+                        <option value="over5000">über 5.000 €</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="tax-country" data-de="Steuerliche Ansässigkeit *" data-en="Country of tax residence *">Steuerliche Ansässigkeit *</label>
+                    <input id="tax-country" name="taxCountry" type="text" value="Deutschland" required>
+                </div>
+                <div class="full">
+                    <label for="tax-id" data-de="Steuer-Identifikationsnummer" data-en="Tax identification number">Steuer-Identifikationsnummer</label>
+                    <input id="tax-id" name="taxId" type="text" inputmode="numeric" autocomplete="off">
+                    <div class="hint" data-de="Für eine reale Produktivseite sollten sensible Daten nur verschlüsselt und datenschutzkonform verarbeitet werden."
+                         data-en="On a real production page, sensitive data should only be processed securely and in compliance with privacy requirements.">
+                        Für eine reale Produktivseite sollten sensible Daten nur verschlüsselt und datenschutzkonform verarbeitet werden.
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend data-de="Gewünschtes Konto" data-en="Requested Account">Gewünschtes Konto</legend>
+            <div class="grid">
+                <div>
+                    <label for="account-type" data-de="Kontomodell *" data-en="Account type *">Kontomodell *</label>
+                    <select id="account-type" name="accountType" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="giro">Girokonto</option>
+                        <option value="giro-plus">Girokonto Plus</option>
+                        <option value="student">Studentenkonto</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="usage" data-de="Geplante Kontonutzung *" data-en="Intended account use *">Geplante Kontonutzung *</label>
+                    <select id="usage" name="usage" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="gehalt">Gehaltskonto</option>
+                        <option value="privat">Private Zahlungen</option>
+                        <option value="haushalt">Haushaltskonto</option>
+                        <option value="sonstige">Sonstige</option>
+                    </select>
+                </div>
+                <div class="full">
+                    <label for="notes" data-de="Zusätzliche Hinweise" data-en="Additional notes">Zusätzliche Hinweise</label>
+                    <textarea id="notes" name="notes"
+                              data-placeholder-de="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?"
+                              data-placeholder-en="Optional: Is there anything we should consider regarding your application?"
+                              placeholder="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend data-de="Einwilligungen" data-en="Consents">Einwilligungen</legend>
+
+            <div class="check-row">
+                <input id="privacy" name="privacy" type="checkbox" required>
+                <label for="privacy"
+                       data-de="Ich habe die Datenschutzinformationen zur Kenntnis genommen. *"
+                       data-en="I have read the privacy information. *">
+                    Ich habe die Datenschutzinformationen zur Kenntnis genommen. *
+                </label>
+            </div>
+
+            <div class="check-row">
+                <input id="terms" name="terms" type="checkbox" required>
+                <label for="terms"
+                       data-de="Ich bestätige, dass meine Angaben vollständig und korrekt sind. *"
+                       data-en="I confirm that my information is complete and correct. *">
+                    Ich bestätige, dass meine Angaben vollständig und korrekt sind. *
+                </label>
+            </div>
+
+            <div class="check-row">
+                <input id="marketing" name="marketing" type="checkbox">
+                <label for="marketing"
+                       data-de="Ich möchte Informationen zu weiteren Angeboten der Fiktive Bank AG erhalten."
+                       data-en="I would like to receive information about additional offers from Fiktive Bank AG.">
+                    Ich möchte Informationen zu weiteren Angeboten der Fiktive Bank AG erhalten.
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="actions">
+            <a class="btn btn-secondary" href="konto-eroeffnen.html"
+               data-de="Zurück" data-en="Back">Zurück</a>
+            <button class="btn btn-primary" type="submit"
+                    data-de="Antrag prüfen" data-en="Review application">
+                Antrag prüfen
+            </button>
+        </div>
+    </form>
+
+    <div id="success-message" class="success" role="status">
+        <strong data-de="Vielen Dank." data-en="Thank you.">Vielen Dank.</strong>
+        <span data-de=" Die Eingaben wurden in dieser Demo erfolgreich geprüft. Es wurden keine Daten übertragen."
+              data-en=" The entries were successfully validated in this demo. No data was transmitted.">
+            Die Eingaben wurden in dieser Demo erfolgreich geprüft. Es wurden keine Daten übertragen.
+        </span>
+    </div>
+</main>
+
+<footer>
+    <span data-de="&copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten"
+          data-en="&copy; 2026 Fictive Bank AG – All rights reserved">
+        &copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten
+    </span>
+</footer>
+
+</body>
+</html>
