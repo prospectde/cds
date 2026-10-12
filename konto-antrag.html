@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontoantrag | Fiktive Bank AG</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontoantrag | Fiktive Bank AG</title>
+<style>
         * { box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
@@ -193,8 +194,7 @@
             }
         }
     </style>
-
-    <script type="text/javascript" charset="utf-8">
+<script charset="utf-8" type="text/javascript">
     (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
     g[e] = g[e] || function () {
@@ -209,8 +209,7 @@
   });
   
 </script>
-
-    <script>
+<script>
         function setLanguage(lang) {
             localStorage.setItem('preferredLanguage', lang);
             applyLanguage(lang);
@@ -252,299 +251,250 @@
     </script>
 </head>
 <body>
-
 <header>
-    <div class="lang-switch">
-        <label for="language-select" style="color:white;"
-               data-de="Sprache / Language:" data-en="Language / Sprache:">Sprache / Language:</label>
-        <select id="language-select" onchange="setLanguage(this.value)">
-            <option value="de">Deutsch</option>
-            <option value="en">English</option>
-        </select>
-    </div>
-    <h1>Fiktive Bank AG</h1>
-    <p data-de="Ihr Antrag für ein neues Girokonto"
-       data-en="Your application for a new checking account">
+<div class="lang-switch">
+<label data-de="Sprache / Language:" data-en="Language / Sprache:" for="language-select" style="color:white;">Sprache / Language:</label>
+<select id="language-select" onchange="setLanguage(this.value)">
+<option value="de">Deutsch</option>
+<option value="en">English</option>
+</select>
+</div>
+<h1>Fiktive Bank AG</h1>
+<p data-de="Ihr Antrag für ein neues Girokonto" data-en="Your application for a new checking account">
         Ihr Antrag für ein neues Girokonto
     </p>
 </header>
-
 <nav>
-    <a href="index.html" data-de="Startseite" data-en="Home">Startseite</a>
-    <a href="produkte.html" data-de="Produkte" data-en="Products">Produkte</a>
-    <a href="konto-eroeffnen.html" data-de="Konto eröffnen" data-en="Open Account">Konto eröffnen</a>
-    <a href="https://form.jotform.com/262573015077052" data-de="Kontakt" data-en="Contact">Kontakt</a>
+<a data-de="Startseite" data-en="Home" href="index.html">Startseite</a>
+<a data-de="Produkte" data-en="Products" href="produkte.html">Produkte</a>
+<a data-de="Konto eröffnen" data-en="Open Account" href="konto-eroeffnen.html">Konto eröffnen</a>
+<a data-de="Kontakt" data-en="Contact" href="https://form.jotform.com/262573015077052">Kontakt</a>
 </nav>
-
 <main>
-    <section class="intro">
-        <h2 data-de="Konto eröffnen" data-en="Open an Account">Konto eröffnen</h2>
-        <p data-de="Bitte füllen Sie die folgenden Angaben aus. Pflichtfelder sind mit * gekennzeichnet."
-           data-en="Please complete the following information. Required fields are marked with *.">
+<section class="intro">
+<h2 data-de="Konto eröffnen" data-en="Open an Account">Konto eröffnen</h2>
+<p data-de="Bitte füllen Sie die folgenden Angaben aus. Pflichtfelder sind mit * gekennzeichnet." data-en="Please complete the following information. Required fields are marked with *.">
             Bitte füllen Sie die folgenden Angaben aus. Pflichtfelder sind mit * gekennzeichnet.
         </p>
-    </section>
-
-    <div class="notice">
-        <strong data-de="Demo-Hinweis:" data-en="Demo notice:">Demo-Hinweis:</strong>
-        <span data-de=" Dieses Formular dient als Beispielseite. Es überträgt oder speichert keine Daten auf einem Server."
-              data-en=" This form is a sample page. It does not transmit or store data on a server.">
+</section>
+<div class="notice">
+<strong data-de="Demo-Hinweis:" data-en="Demo notice:">Demo-Hinweis:</strong>
+<span data-de=" Dieses Formular dient als Beispielseite. Es überträgt oder speichert keine Daten auf einem Server." data-en=" This form is a sample page. It does not transmit or store data on a server.">
             Dieses Formular dient als Beispielseite. Es überträgt oder speichert keine Daten auf einem Server.
         </span>
-    </div>
-
-    <div class="notice">
-        <strong data-de="Co-Browse-Schutz:" data-en="Co-browse protection:">Co-Browse-Schutz:</strong>
-        <span data-de=" Das Geburtsdatum ist für Agenten über einen CSS-Selektor als schreibgeschützt vorgesehen. Die Steuer-ID wird auf einer separaten URL eingegeben, die in Genesys Cloud unter Pause Sharing hinterlegt werden muss."
-              data-en=" The date of birth is intended to be read-only for agents via a CSS selector. The tax ID is entered on a separate URL that must be configured under Pause Sharing in Genesys Cloud.">
+</div>
+<div class="notice">
+<strong data-de="Co-Browse-Schutz:" data-en="Co-browse protection:">Co-Browse-Schutz:</strong>
+<span data-de=" Das Geburtsdatum ist für Agenten über einen CSS-Selektor als schreibgeschützt vorgesehen. Die Steuer-ID wird auf einer separaten URL eingegeben, die in Genesys Cloud unter Pause Sharing hinterlegt werden muss." data-en=" The date of birth is intended to be read-only for agents via a CSS selector. The tax ID is entered on a separate URL that must be configured under Pause Sharing in Genesys Cloud.">
             Das Geburtsdatum ist für Agenten über einen CSS-Selektor als schreibgeschützt vorgesehen. Die Steuer-ID wird auf einer separaten URL eingegeben, die in Genesys Cloud unter Pause Sharing hinterlegt werden muss.
         </span>
-    </div>
-
-    <div class="progress" aria-label="Schritte der Kontoeröffnung">
-        <span data-de="1. Persönliche Daten" data-en="1. Personal details">1. Persönliche Daten</span>
-        <span data-de="2. Adresse & Kontakt" data-en="2. Address & contact">2. Adresse & Kontakt</span>
-        <span data-de="3. Beruf & Steuern" data-en="3. Employment & tax">3. Beruf & Steuern</span>
-        <span data-de="4. Kontoauswahl" data-en="4. Account selection">4. Kontoauswahl</span>
-    </div>
-
-    <form id="account-form" novalidate>
-        <fieldset>
-            <legend data-de="Persönliche Angaben" data-en="Personal Details">Persönliche Angaben</legend>
-            <div class="grid">
-                <div>
-                    <label for="salutation" data-de="Anrede *" data-en="Salutation *">Anrede *</label>
-                    <select id="salutation" name="salutation" required>
-                        <option value="">Bitte wählen</option>
-                        <option value="frau">Frau</option>
-                        <option value="herr">Herr</option>
-                        <option value="divers">Divers</option>
-                        <option value="keine">Keine Angabe</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="title" data-de="Titel" data-en="Title">Titel</label>
-                    <input id="title" name="title" type="text">
-                </div>
-                <div>
-                    <label for="first-name" data-de="Vorname *" data-en="First name *">Vorname *</label>
-                    <input id="first-name" name="firstName" type="text" autocomplete="given-name" required>
-                </div>
-                <div>
-                    <label for="last-name" data-de="Nachname *" data-en="Last name *">Nachname *</label>
-                    <input id="last-name" name="lastName" type="text" autocomplete="family-name" required>
-                </div>
-                <div>
-                    <label for="birth-date" data-de="Geburtsdatum *" data-en="Date of birth *">Geburtsdatum *</label>
-                    <input id="birth-date" class="cobrowse-agent-readonly" name="birthDate" type="date" required>
-                </div>
-                <div>
-                    <label for="birth-place" data-de="Geburtsort *" data-en="Place of birth *">Geburtsort *</label>
-                    <input id="birth-place" name="birthPlace" type="text" required>
-                </div>
-                <div>
-                    <label for="nationality" data-de="Staatsangehörigkeit *" data-en="Nationality *">Staatsangehörigkeit *</label>
-                    <input id="nationality" name="nationality" type="text" required>
-                </div>
-                <div>
-                    <label for="marital-status" data-de="Familienstand" data-en="Marital status">Familienstand</label>
-                    <select id="marital-status" name="maritalStatus">
-                        <option value="">Bitte wählen</option>
-                        <option value="ledig">Ledig</option>
-                        <option value="verheiratet">Verheiratet</option>
-                        <option value="geschieden">Geschieden</option>
-                        <option value="verwitwet">Verwitwet</option>
-                    </select>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend data-de="Adresse und Kontakt" data-en="Address and Contact">Adresse und Kontakt</legend>
-            <div class="grid">
-                <div class="full">
-                    <label for="street" data-de="Straße und Hausnummer *" data-en="Street and house number *">Straße und Hausnummer *</label>
-                    <input id="street" name="street" type="text" autocomplete="street-address" required>
-                </div>
-                <div>
-                    <label for="postal-code" data-de="PLZ *" data-en="Postal code *">PLZ *</label>
-                    <input id="postal-code" name="postalCode" type="text" inputmode="numeric" autocomplete="postal-code" required>
-                </div>
-                <div>
-                    <label for="city" data-de="Ort *" data-en="City *">Ort *</label>
-                    <input id="city" name="city" type="text" autocomplete="address-level2" required>
-                </div>
-                <div>
-                    <label for="country" data-de="Land *" data-en="Country *">Land *</label>
-                    <input id="country" name="country" type="text" autocomplete="country-name" value="Deutschland" required>
-                </div>
-                <div>
-                    <label for="phone" data-de="Mobilnummer *" data-en="Mobile number *">Mobilnummer *</label>
-                    <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-                </div>
-                <div class="full">
-                    <label for="email" data-de="E-Mail-Adresse *" data-en="Email address *">E-Mail-Adresse *</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend data-de="Beruf und steuerliche Angaben" data-en="Employment and Tax Information">Beruf und steuerliche Angaben</legend>
-            <div class="grid">
-                <div>
-                    <label for="employment" data-de="Beschäftigungsstatus *" data-en="Employment status *">Beschäftigungsstatus *</label>
-                    <select id="employment" name="employment" required>
-                        <option value="">Bitte wählen</option>
-                        <option value="angestellt">Angestellt</option>
-                        <option value="selbststaendig">Selbstständig</option>
-                        <option value="student">Student/in</option>
-                        <option value="rentner">Rentner/in</option>
-                        <option value="arbeitssuchend">Arbeitssuchend</option>
-                        <option value="sonstige">Sonstige</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="occupation" data-de="Beruf/Tätigkeit" data-en="Occupation">Beruf/Tätigkeit</label>
-                    <input id="occupation" name="occupation" type="text">
-                </div>
-                <div>
-                    <label for="income" data-de="Monatliches Nettoeinkommen" data-en="Monthly net income">Monatliches Nettoeinkommen</label>
-                    <select id="income" name="income">
-                        <option value="">Bitte wählen</option>
-                        <option value="under1000">unter 1.000 €</option>
-                        <option value="1000-2000">1.000–2.000 €</option>
-                        <option value="2000-3000">2.000–3.000 €</option>
-                        <option value="3000-5000">3.000–5.000 €</option>
-                        <option value="over5000">über 5.000 €</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="tax-country" data-de="Steuerliche Ansässigkeit *" data-en="Country of tax residence *">Steuerliche Ansässigkeit *</label>
-                    <input id="tax-country" name="taxCountry" type="text" value="Deutschland" required>
-                </div>
-                <div>
-                    <label for="social-security-number"
-                           data-de="Sozialversicherungsnummer"
-                           data-en="Social security number">
+</div>
+<div aria-label="Schritte der Kontoeröffnung" class="progress">
+<span data-de="1. Persönliche Daten" data-en="1. Personal details">1. Persönliche Daten</span>
+<span data-de="2. Adresse &amp; Kontakt" data-en="2. Address &amp; contact">2. Adresse &amp; Kontakt</span>
+<span data-de="3. Beruf &amp; Steuern" data-en="3. Employment &amp; tax">3. Beruf &amp; Steuern</span>
+<span data-de="4. Kontoauswahl" data-en="4. Account selection">4. Kontoauswahl</span>
+</div>
+<form id="account-form" novalidate="">
+<fieldset>
+<legend data-de="Persönliche Angaben" data-en="Personal Details">Persönliche Angaben</legend>
+<div class="grid">
+<div>
+<label data-de="Anrede *" data-en="Salutation *" for="salutation">Anrede *</label>
+<select id="salutation" name="salutation" required="">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="Frau" data-en="Ms" value="frau">Frau</option>
+<option data-de="Herr" data-en="Mr" value="herr">Herr</option>
+<option data-de="Divers" data-en="Diverse" value="divers">Divers</option>
+<option data-de="Keine Angabe" data-en="Prefer not to say" value="keine">Keine Angabe</option>
+</select>
+</div>
+<div>
+<label data-de="Titel" data-en="Title" for="title">Titel</label>
+<input id="title" name="title" type="text"/>
+</div>
+<div>
+<label data-de="Vorname *" data-en="First name *" for="first-name">Vorname *</label>
+<input autocomplete="given-name" id="first-name" name="firstName" required="" type="text"/>
+</div>
+<div>
+<label data-de="Nachname *" data-en="Last name *" for="last-name">Nachname *</label>
+<input autocomplete="family-name" id="last-name" name="lastName" required="" type="text"/>
+</div>
+<div>
+<label data-de="Geburtsdatum *" data-en="Date of birth *" for="birth-date">Geburtsdatum *</label>
+<input class="cobrowse-agent-readonly" id="birth-date" name="birthDate" required="" type="date"/>
+</div>
+<div>
+<label data-de="Geburtsort *" data-en="Place of birth *" for="birth-place">Geburtsort *</label>
+<input id="birth-place" name="birthPlace" required="" type="text"/>
+</div>
+<div>
+<label data-de="Staatsangehörigkeit *" data-en="Nationality *" for="nationality">Staatsangehörigkeit *</label>
+<input id="nationality" name="nationality" required="" type="text"/>
+</div>
+<div>
+<label data-de="Familienstand" data-en="Marital status" for="marital-status">Familienstand</label>
+<select id="marital-status" name="maritalStatus">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="Ledig" data-en="Single" value="ledig">Ledig</option>
+<option data-de="Verheiratet" data-en="Married" value="verheiratet">Verheiratet</option>
+<option data-de="Geschieden" data-en="Divorced" value="geschieden">Geschieden</option>
+<option data-de="Verwitwet" data-en="Widowed" value="verwitwet">Verwitwet</option>
+</select>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend data-de="Adresse und Kontakt" data-en="Address and Contact">Adresse und Kontakt</legend>
+<div class="grid">
+<div class="full">
+<label data-de="Straße und Hausnummer *" data-en="Street and house number *" for="street">Straße und Hausnummer *</label>
+<input autocomplete="street-address" id="street" name="street" required="" type="text"/>
+</div>
+<div>
+<label data-de="PLZ *" data-en="Postal code *" for="postal-code">PLZ *</label>
+<input autocomplete="postal-code" id="postal-code" inputmode="numeric" name="postalCode" required="" type="text"/>
+</div>
+<div>
+<label data-de="Ort *" data-en="City *" for="city">Ort *</label>
+<input autocomplete="address-level2" id="city" name="city" required="" type="text"/>
+</div>
+<div>
+<label data-de="Land *" data-en="Country *" for="country">Land *</label>
+<input autocomplete="country-name" id="country" name="country" required="" type="text" value="Deutschland"/>
+</div>
+<div>
+<label data-de="Mobilnummer *" data-en="Mobile number *" for="phone">Mobilnummer *</label>
+<input autocomplete="tel" id="phone" name="phone" required="" type="tel"/>
+</div>
+<div class="full">
+<label data-de="E-Mail-Adresse *" data-en="Email address *" for="email">E-Mail-Adresse *</label>
+<input autocomplete="email" id="email" name="email" required="" type="email"/>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend data-de="Beruf und steuerliche Angaben" data-en="Employment and Tax Information">Beruf und steuerliche Angaben</legend>
+<div class="grid">
+<div>
+<label data-de="Beschäftigungsstatus *" data-en="Employment status *" for="employment">Beschäftigungsstatus *</label>
+<select id="employment" name="employment" required="">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="Angestellt" data-en="Employed" value="angestellt">Angestellt</option>
+<option data-de="Selbstständig" data-en="Self-employed" value="selbststaendig">Selbstständig</option>
+<option data-de="Student/in" data-en="Student" value="student">Student/in</option>
+<option data-de="Rentner/in" data-en="Retired" value="rentner">Rentner/in</option>
+<option data-de="Arbeitssuchend" data-en="Job-seeking" value="arbeitssuchend">Arbeitssuchend</option>
+<option data-de="Sonstige" data-en="Other" value="sonstige">Sonstige</option>
+</select>
+</div>
+<div>
+<label data-de="Beruf/Tätigkeit" data-en="Occupation" for="occupation">Beruf/Tätigkeit</label>
+<input id="occupation" name="occupation" type="text"/>
+</div>
+<div>
+<label data-de="Monatliches Nettoeinkommen" data-en="Monthly net income" for="income">Monatliches Nettoeinkommen</label>
+<select id="income" name="income">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="unter 1.000 €" data-en="under €1,000" value="under1000">unter 1.000 €</option>
+<option data-de="1.000–2.000 €" data-en="€1,000–2,000" value="1000-2000">1.000–2.000 €</option>
+<option data-de="2.000–3.000 €" data-en="€2,000–3,000" value="2000-3000">2.000–3.000 €</option>
+<option data-de="3.000–5.000 €" data-en="€3,000–5,000" value="3000-5000">3.000–5.000 €</option>
+<option data-de="über 5.000 €" data-en="over €5,000" value="over5000">über 5.000 €</option>
+</select>
+</div>
+<div>
+<label data-de="Steuerliche Ansässigkeit *" data-en="Country of tax residence *" for="tax-country">Steuerliche Ansässigkeit *</label>
+<input id="tax-country" name="taxCountry" required="" type="text" value="Deutschland"/>
+</div>
+<div>
+<label data-de="Sozialversicherungsnummer" data-en="Social security number" for="social-security-number">
                         Sozialversicherungsnummer
                     </label>
-                    <input id="social-security-number"
-                           name="socialSecurityNumber"
-                           type="text"
-                           autocomplete="off"
-                           data-placeholder-de="z. B. 12 123456 A 123"
-                           data-placeholder-en="e.g. 12 123456 A 123"
-                           placeholder="z. B. 12 123456 A 123">
-                    <div class="hint"
-                         data-de="Bitte geben Sie Ihre Sozialversicherungsnummer ein."
-                         data-en="Please enter your social security number.">
+<input autocomplete="off" data-placeholder-de="z. B. 12 123456 A 123" data-placeholder-en="e.g. 12 123456 A 123" id="social-security-number" name="socialSecurityNumber" placeholder="z. B. 12 123456 A 123" type="text"/>
+<div class="hint" data-de="Bitte geben Sie Ihre Sozialversicherungsnummer ein." data-en="Please enter your social security number.">
                         Bitte geben Sie Ihre Sozialversicherungsnummer ein.
                     </div>
-                </div>
-                <div class="full">
-                    <label data-de="Steuer-Identifikationsnummer" data-en="Tax identification number">Steuer-Identifikationsnummer</label>
-                    <p class="hint"
-                       data-de="Die Steuer-ID wird auf einer geschützten Seite eingegeben. Beim Aufruf dieser Seite kann Genesys Cloud Co-browse automatisch pausieren."
-                       data-en="The tax ID is entered on a protected page. Genesys Cloud Co-browse can automatically pause when this page is opened.">
+</div>
+<div class="full">
+<label data-de="Steuer-Identifikationsnummer" data-en="Tax identification number">Steuer-Identifikationsnummer</label>
+<p class="hint" data-de="Die Steuer-ID wird auf einer geschützten Seite eingegeben. Beim Aufruf dieser Seite kann Genesys Cloud Co-browse automatisch pausieren." data-en="The tax ID is entered on a protected page. Genesys Cloud Co-browse can automatically pause when this page is opened.">
                         Die Steuer-ID wird auf einer geschützten Seite eingegeben. Beim Aufruf dieser Seite kann Genesys Cloud Co-browse automatisch pausieren.
                     </p>
-                    <a class="btn btn-secondary" href="steuer-id.html"
-                       data-de="Steuer-ID sicher eingeben" data-en="Enter tax ID securely">
+<a class="btn btn-secondary" data-de="Steuer-ID sicher eingeben" data-en="Enter tax ID securely" href="steuer-id.html">
                         Steuer-ID sicher eingeben
                     </a>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend data-de="Gewünschtes Konto" data-en="Requested Account">Gewünschtes Konto</legend>
-            <div class="grid">
-                <div>
-                    <label for="account-type" data-de="Kontomodell *" data-en="Account type *">Kontomodell *</label>
-                    <select id="account-type" name="accountType" required>
-                        <option value="">Bitte wählen</option>
-                        <option value="giro">Girokonto</option>
-                        <option value="giro-plus">Girokonto Plus</option>
-                        <option value="student">Studentenkonto</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="usage" data-de="Geplante Kontonutzung *" data-en="Intended account use *">Geplante Kontonutzung *</label>
-                    <select id="usage" name="usage" required>
-                        <option value="">Bitte wählen</option>
-                        <option value="gehalt">Gehaltskonto</option>
-                        <option value="privat">Private Zahlungen</option>
-                        <option value="haushalt">Haushaltskonto</option>
-                        <option value="sonstige">Sonstige</option>
-                    </select>
-                </div>
-                <div class="full">
-                    <label for="notes" data-de="Zusätzliche Hinweise" data-en="Additional notes">Zusätzliche Hinweise</label>
-                    <textarea id="notes" name="notes"
-                              data-placeholder-de="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?"
-                              data-placeholder-en="Optional: Is there anything we should consider regarding your application?"
-                              placeholder="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?"></textarea>
-                </div>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend data-de="Einwilligungen" data-en="Consents">Einwilligungen</legend>
-
-            <div class="check-row">
-                <input id="privacy" name="privacy" type="checkbox" required>
-                <label for="privacy"
-                       data-de="Ich habe die Datenschutzinformationen zur Kenntnis genommen. *"
-                       data-en="I have read the privacy information. *">
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend data-de="Gewünschtes Konto" data-en="Requested Account">Gewünschtes Konto</legend>
+<div class="grid">
+<div>
+<label data-de="Kontomodell *" data-en="Account type *" for="account-type">Kontomodell *</label>
+<select id="account-type" name="accountType" required="">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="Girokonto" data-en="Checking account" value="giro">Girokonto</option>
+<option data-de="Girokonto Plus" data-en="Checking account Plus" value="giro-plus">Girokonto Plus</option>
+<option data-de="Studentenkonto" data-en="Student account" value="student">Studentenkonto</option>
+</select>
+</div>
+<div>
+<label data-de="Geplante Kontonutzung *" data-en="Intended account use *" for="usage">Geplante Kontonutzung *</label>
+<select id="usage" name="usage" required="">
+<option data-de="Bitte wählen" data-en="Please select" value="">Bitte wählen</option>
+<option data-de="Gehaltskonto" data-en="Salary account" value="gehalt">Gehaltskonto</option>
+<option data-de="Private Zahlungen" data-en="Private payments" value="privat">Private Zahlungen</option>
+<option data-de="Haushaltskonto" data-en="Household account" value="haushalt">Haushaltskonto</option>
+<option data-de="Sonstige" data-en="Other" value="sonstige">Sonstige</option>
+</select>
+</div>
+<div class="full">
+<label data-de="Zusätzliche Hinweise" data-en="Additional notes" for="notes">Zusätzliche Hinweise</label>
+<textarea data-placeholder-de="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?" data-placeholder-en="Optional: Is there anything we should consider regarding your application?" id="notes" name="notes" placeholder="Optional: Gibt es etwas, das wir bei Ihrem Antrag berücksichtigen sollen?"></textarea>
+</div>
+</div>
+</fieldset>
+<fieldset>
+<legend data-de="Einwilligungen" data-en="Consents">Einwilligungen</legend>
+<div class="check-row">
+<input id="privacy" name="privacy" required="" type="checkbox"/>
+<label data-de="Ich habe die Datenschutzinformationen zur Kenntnis genommen. *" data-en="I have read the privacy information. *" for="privacy">
                     Ich habe die Datenschutzinformationen zur Kenntnis genommen. *
                 </label>
-            </div>
-
-            <div class="check-row">
-                <input id="terms" name="terms" type="checkbox" required>
-                <label for="terms"
-                       data-de="Ich bestätige, dass meine Angaben vollständig und korrekt sind. *"
-                       data-en="I confirm that my information is complete and correct. *">
+</div>
+<div class="check-row">
+<input id="terms" name="terms" required="" type="checkbox"/>
+<label data-de="Ich bestätige, dass meine Angaben vollständig und korrekt sind. *" data-en="I confirm that my information is complete and correct. *" for="terms">
                     Ich bestätige, dass meine Angaben vollständig und korrekt sind. *
                 </label>
-            </div>
-
-            <div class="check-row">
-                <input id="marketing" name="marketing" type="checkbox">
-                <label for="marketing"
-                       data-de="Ich möchte Informationen zu weiteren Angeboten der Fiktive Bank AG erhalten."
-                       data-en="I would like to receive information about additional offers from Fiktive Bank AG.">
+</div>
+<div class="check-row">
+<input id="marketing" name="marketing" type="checkbox"/>
+<label data-de="Ich möchte Informationen zu weiteren Angeboten der Fiktive Bank AG erhalten." data-en="I would like to receive information about additional offers from Fiktive Bank AG." for="marketing">
                     Ich möchte Informationen zu weiteren Angeboten der Fiktive Bank AG erhalten.
                 </label>
-            </div>
-        </fieldset>
-
-        <div class="actions">
-            <a class="btn btn-secondary" href="konto-eroeffnen.html"
-               data-de="Zurück" data-en="Back">Zurück</a>
-            <button class="btn btn-primary" type="submit"
-                    data-de="Antrag prüfen" data-en="Review application">
+</div>
+</fieldset>
+<div class="actions">
+<a class="btn btn-secondary" data-de="Zurück" data-en="Back" href="konto-eroeffnen.html">Zurück</a>
+<button class="btn btn-primary" data-de="Antrag prüfen" data-en="Review application" type="submit">
                 Antrag prüfen
             </button>
-        </div>
-    </form>
-
-    <div id="success-message" class="success" role="status">
-        <strong data-de="Vielen Dank." data-en="Thank you.">Vielen Dank.</strong>
-        <span data-de=" Die Eingaben wurden in dieser Demo erfolgreich geprüft. Es wurden keine Daten übertragen."
-              data-en=" The entries were successfully validated in this demo. No data was transmitted.">
+</div>
+</form>
+<div class="success" id="success-message" role="status">
+<strong data-de="Vielen Dank." data-en="Thank you.">Vielen Dank.</strong>
+<span data-de=" Die Eingaben wurden in dieser Demo erfolgreich geprüft. Es wurden keine Daten übertragen." data-en=" The entries were successfully validated in this demo. No data was transmitted.">
             Die Eingaben wurden in dieser Demo erfolgreich geprüft. Es wurden keine Daten übertragen.
         </span>
-    </div>
+</div>
 </main>
-
 <footer>
-    <span data-de="&copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten"
-          data-en="&copy; 2026 Fictive Bank AG – All rights reserved">
-        &copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten
+<span data-de="© 2026 Fiktive Bank AG – Alle Rechte vorbehalten" data-en="© 2026 Fictive Bank AG – All rights reserved">
+        © 2026 Fiktive Bank AG – Alle Rechte vorbehalten
     </span>
 </footer>
-
 </body>
 </html>
