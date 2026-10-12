@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steuer-ID | Fiktive Bank AG</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .lang-switch select {
+            padding: 6px 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        nav {
+            background: #00509e;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 10px;
+        }
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 25px 20px 50px;
+        }
+        .intro {
+            margin-bottom: 25px;
+        }
+        .intro h2 {
+            color: #003366;
+            margin-bottom: 8px;
+        }
+        .progress {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 28px;
+        }
+        .progress span {
+            background: #eaf3fb;
+            color: #003366;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: .9rem;
+            font-weight: bold;
+        }
+        form {
+            display: grid;
+            gap: 22px;
+        }
+        fieldset {
+            border: 0;
+            margin: 0;
+            padding: 22px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,.08);
+        }
+        legend {
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #003366;
+            padding-bottom: 12px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 20px;
+        }
+        .full {
+            grid-column: 1 / -1;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #b8c1cc;
+            border-radius: 5px;
+            font: inherit;
+            background: #fff;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 3px solid rgba(0,80,158,.15);
+            border-color: #00509e;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .check-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .check-row input {
+            width: auto;
+            margin-top: 3px;
+        }
+        .check-row label {
+            font-weight: normal;
+            margin: 0;
+        }
+        .hint {
+            color: #666;
+            font-size: .9rem;
+            margin-top: 5px;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+        .btn {
+            border: 0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: #00509e;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #003f7d;
+        }
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #222;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .notice {
+            background: #eaf3fb;
+            border-left: 5px solid #00509e;
+            padding: 16px 18px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .success {
+            display: none;
+            background: #eef8ee;
+            border-left: 5px solid #2e7d32;
+            padding: 16px 18px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 15px 20px;
+        }
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
+            .full { grid-column: auto; }
+            nav a { display: block; margin: 7px 0; }
+            .lang-switch {
+                position: static;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8">
+    (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.mypurecloud.ie/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euw1',
+    deploymentId: '614e5d38-4a5f-412c-a953-a8c365286dc5'
+  });
+  
+</script>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            applyLanguage(lang);
+        }
+
+        function applyLanguage(lang) {
+            const activeLang = lang && lang.startsWith('en') ? 'en' : 'de';
+            document.documentElement.lang = activeLang;
+            const select = document.getElementById('language-select');
+            if (select) select.value = activeLang;
+
+            document.querySelectorAll('[data-de][data-en]').forEach(function(el) {
+                el.textContent = activeLang === 'en' ? el.dataset.en : el.dataset.de;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language || navigator.userLanguage || 'de';
+            applyLanguage(savedLang || browserLang);
+
+            const form = document.getElementById('tax-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+
+                // Demo: sensible Eingabe nicht speichern oder übertragen.
+                document.getElementById('tax-id').value = '';
+                document.getElementById('success-message').style.display = 'block';
+            });
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="lang-switch">
+        <label for="language-select" style="color:white;"
+               data-de="Sprache / Language:" data-en="Language / Sprache:">Sprache / Language:</label>
+        <select id="language-select" onchange="setLanguage(this.value)">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+    <h1>Fiktive Bank AG</h1>
+    <p data-de="Geschützte Eingabe" data-en="Protected entry">Geschützte Eingabe</p>
+</header>
+
+<nav>
+    <a href="index.html" data-de="Startseite" data-en="Home">Startseite</a>
+    <a href="produkte.html" data-de="Produkte" data-en="Products">Produkte</a>
+    <a href="konto-eroeffnen.html" data-de="Konto eröffnen" data-en="Open Account">Konto eröffnen</a>
+    <a href="https://form.jotform.com/262573015077052" data-de="Kontakt" data-en="Contact">Kontakt</a>
+</nav>
+
+<main>
+    <section class="intro">
+        <h2 data-de="Steuer-Identifikationsnummer eingeben" data-en="Enter tax identification number">
+            Steuer-Identifikationsnummer eingeben
+        </h2>
+        <p data-de="Diese Seite ist für sensible Eingaben vorgesehen. Hinterlegen Sie steuer-id.html in Genesys Cloud unter Co-browse → Pause Sharing."
+           data-en="This page is intended for sensitive input. Configure steuer-id.html in Genesys Cloud under Co-browse → Pause Sharing.">
+            Diese Seite ist für sensible Eingaben vorgesehen. Hinterlegen Sie steuer-id.html in Genesys Cloud unter Co-browse → Pause Sharing.
+        </p>
+    </section>
+
+    <div class="notice">
+        <strong data-de="Datenschutz:" data-en="Privacy:">Datenschutz:</strong>
+        <span data-de=" Während diese Seite geöffnet ist, soll die Co-Browse-Übertragung pausiert sein. Die Steuer-ID wird in dieser Demo weder gespeichert noch übertragen."
+              data-en=" While this page is open, co-browse sharing should be paused. In this demo the tax ID is neither stored nor transmitted.">
+            Während diese Seite geöffnet ist, soll die Co-Browse-Übertragung pausiert sein. Die Steuer-ID wird in dieser Demo weder gespeichert noch übertragen.
+        </span>
+    </div>
+
+    <form id="tax-form" novalidate>
+        <fieldset>
+            <legend data-de="Steuerliche Angaben" data-en="Tax information">Steuerliche Angaben</legend>
+            <div class="grid">
+                <div class="full">
+                    <label for="tax-id" data-de="Steuer-Identifikationsnummer *" data-en="Tax identification number *">
+                        Steuer-Identifikationsnummer *
+                    </label>
+                    <input id="tax-id"
+                           class="cobrowse-masked"
+                           name="taxId"
+                           type="text"
+                           inputmode="numeric"
+                           autocomplete="off"
+                           minlength="11"
+                           maxlength="11"
+                           pattern="[0-9]{11}"
+                           required>
+                    <div class="hint"
+                         data-de="Bitte geben Sie die 11-stellige Steuer-Identifikationsnummer ein."
+                         data-en="Please enter the 11-digit tax identification number.">
+                        Bitte geben Sie die 11-stellige Steuer-Identifikationsnummer ein.
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="actions">
+            <a class="btn btn-secondary" href="konto-antrag-cobrowse.html"
+               data-de="Zurück zum Antrag" data-en="Back to application">Zurück zum Antrag</a>
+            <button class="btn btn-primary" type="submit"
+                    data-de="Eingabe bestätigen" data-en="Confirm entry">
+                Eingabe bestätigen
+            </button>
+        </div>
+    </form>
+
+    <div id="success-message" class="success" role="status">
+        <strong data-de="Eingabe geprüft." data-en="Entry validated.">Eingabe geprüft.</strong>
+        <span data-de=" Die Steuer-ID wurde in dieser Demo nicht gespeichert oder übertragen."
+              data-en=" The tax ID was not stored or transmitted in this demo.">
+            Die Steuer-ID wurde in dieser Demo nicht gespeichert oder übertragen.
+        </span>
+    </div>
+</main>
+
+<footer>
+    <span data-de="&copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten"
+          data-en="&copy; 2026 Fictive Bank AG – All rights reserved">
+        &copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten
+    </span>
+</footer>
+
+</body>
+</html>

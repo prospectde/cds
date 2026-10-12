@@ -293,6 +293,14 @@
         </span>
     </div>
 
+    <div class="notice">
+        <strong data-de="Co-Browse-Schutz:" data-en="Co-browse protection:">Co-Browse-Schutz:</strong>
+        <span data-de=" Das Geburtsdatum ist für Agenten über einen CSS-Selektor als schreibgeschützt vorgesehen. Die Steuer-ID wird auf einer separaten URL eingegeben, die in Genesys Cloud unter Pause Sharing hinterlegt werden muss."
+              data-en=" The date of birth is intended to be read-only for agents via a CSS selector. The tax ID is entered on a separate URL that must be configured under Pause Sharing in Genesys Cloud.">
+            Das Geburtsdatum ist für Agenten über einen CSS-Selektor als schreibgeschützt vorgesehen. Die Steuer-ID wird auf einer separaten URL eingegeben, die in Genesys Cloud unter Pause Sharing hinterlegt werden muss.
+        </span>
+    </div>
+
     <div class="progress" aria-label="Schritte der Kontoeröffnung">
         <span data-de="1. Persönliche Daten" data-en="1. Personal details">1. Persönliche Daten</span>
         <span data-de="2. Adresse & Kontakt" data-en="2. Address & contact">2. Adresse & Kontakt</span>
@@ -328,7 +336,7 @@
                 </div>
                 <div>
                     <label for="birth-date" data-de="Geburtsdatum *" data-en="Date of birth *">Geburtsdatum *</label>
-                    <input id="birth-date" name="birthDate" type="date" required>
+                    <input id="birth-date" class="cobrowse-agent-readonly" name="birthDate" type="date" required>
                 </div>
                 <div>
                     <label for="birth-place" data-de="Geburtsort *" data-en="Place of birth *">Geburtsort *</label>
@@ -416,12 +424,16 @@
                     <input id="tax-country" name="taxCountry" type="text" value="Deutschland" required>
                 </div>
                 <div class="full">
-                    <label for="tax-id" data-de="Steuer-Identifikationsnummer" data-en="Tax identification number">Steuer-Identifikationsnummer</label>
-                    <input id="tax-id" name="taxId" type="text" inputmode="numeric" autocomplete="off">
-                    <div class="hint" data-de="Für eine reale Produktivseite sollten sensible Daten nur verschlüsselt und datenschutzkonform verarbeitet werden."
-                         data-en="On a real production page, sensitive data should only be processed securely and in compliance with privacy requirements.">
-                        Für eine reale Produktivseite sollten sensible Daten nur verschlüsselt und datenschutzkonform verarbeitet werden.
-                    </div>
+                    <label data-de="Steuer-Identifikationsnummer" data-en="Tax identification number">Steuer-Identifikationsnummer</label>
+                    <p class="hint"
+                       data-de="Die Steuer-ID wird auf einer geschützten Seite eingegeben. Beim Aufruf dieser Seite kann Genesys Cloud Co-browse automatisch pausieren."
+                       data-en="The tax ID is entered on a protected page. Genesys Cloud Co-browse can automatically pause when this page is opened.">
+                        Die Steuer-ID wird auf einer geschützten Seite eingegeben. Beim Aufruf dieser Seite kann Genesys Cloud Co-browse automatisch pausieren.
+                    </p>
+                    <a class="btn btn-secondary" href="steuer-id.html"
+                       data-de="Steuer-ID sicher eingeben" data-en="Enter tax ID securely">
+                        Steuer-ID sicher eingeben
+                    </a>
                 </div>
             </div>
         </fieldset>
