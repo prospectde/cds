@@ -240,6 +240,28 @@ footer{background:var(--gv)!important;color:#fff!important;}
         function setLanguage(lang) {
             localStorage.setItem('preferredLanguage', lang);
             applyLanguage(lang);
+            applyGenesysLanguage(lang);
+        }
+
+        function applyGenesysLanguage(lang) {
+            const genesysLang = lang && lang.startsWith('en') ? 'en-us' : 'de';
+
+            if (typeof Genesys !== 'function') {
+                console.warn('Genesys Messenger is not available yet.');
+                return;
+            }
+
+            Genesys(
+                "command",
+                "Messenger.configure",
+                { config: { lang: genesysLang } },
+                function() {
+                    console.log("Genesys Messenger language updated:", genesysLang);
+                },
+                function(error) {
+                    console.error("Could not update Genesys Messenger language:", error);
+                }
+            );
         }
 
         function applyLanguage(lang) {
@@ -257,6 +279,7 @@ footer{background:var(--gv)!important;color:#fff!important;}
             const savedLang = localStorage.getItem('preferredLanguage');
             const browserLang = navigator.language || navigator.userLanguage || 'de';
             applyLanguage(savedLang || browserLang);
+            applyGenesysLanguage(savedLang || browserLang);
 
             const form = document.getElementById('tax-form');
             form.addEventListener('submit', function(event) {
