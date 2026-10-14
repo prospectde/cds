@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkte | Fiktive Bank AG</title>
+    <title>Produkte | Genyra Bank AG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -138,7 +138,33 @@
             color: #555;
         }
 
-    </style>
+    
+:root{
+  --gv:#2b1b54;--gv2:#4a2a78;--go:#ff5a2f;--go2:#e54820;
+  --bg:#f7f5fa;--surface:#fff;--text:#2a2630;--muted:#6e6875;
+  --border:#ddd7e6;--soft:#f1ebf7;--softo:#fff1ec;
+}
+body{background:var(--bg)!important;color:var(--text)!important;}
+header{background:linear-gradient(120deg,var(--gv) 0%,var(--gv2) 58%,var(--go) 100%)!important;color:#fff!important;}
+header p{color:rgba(255,255,255,.92);}
+nav{background:#24183f!important;box-shadow:0 3px 12px rgba(43,27,84,.18);}
+nav a{color:#fff!important;border-radius:999px;transition:background .2s ease;}
+nav a:hover,nav a:focus{background:rgba(255,90,47,.18);}
+.feature,.info-card,fieldset{background:var(--surface)!important;border:1px solid var(--border);box-shadow:0 8px 24px rgba(43,27,84,.08)!important;}
+.feature h3,.info-card h3,.page-intro h2,.section-title,.intro h2,legend{color:var(--gv)!important;}
+.notice{background:var(--softo)!important;border-left-color:var(--go)!important;}
+.progress span{background:var(--soft)!important;color:var(--gv)!important;border:1px solid #ddd2eb;}
+.cta,.btn-primary{background:var(--go)!important;color:#fff!important;box-shadow:0 4px 12px rgba(255,90,47,.22);}
+.cta:hover,.btn-primary:hover{background:var(--go2)!important;}
+.btn-secondary{background:var(--soft)!important;color:var(--gv)!important;border:1px solid #d9cdea;}
+input,select,textarea{border-color:var(--border)!important;background:#fff!important;}
+input:focus,select:focus,textarea:focus{border-color:var(--go)!important;outline:3px solid rgba(255,90,47,.16)!important;}
+.hint,.product-meta{color:var(--muted)!important;}
+.success{border-left-color:var(--go)!important;background:#fff8f4!important;}
+footer{background:var(--gv)!important;color:#fff!important;}
+.lang-switch select{background:#fff!important;color:var(--gv)!important;border:1px solid rgba(255,255,255,.5)!important;}
+
+</style>
     <script type="text/javascript" charset="utf-8">
     (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
@@ -288,7 +314,7 @@
             <option value="en">English</option>
         </select>
     </div>
-    <h1>Fiktive Bank AG</h1>
+    <h1>Genyra Bank AG</h1>
     <p data-de="Ihre vertrauensvolle Partnerin in allen Finanzfragen"
        data-en="Your trusted partner for all financial matters">
        Ihre vertrauensvolle Partnerin in allen Finanzfragen
@@ -393,9 +419,9 @@
 
 
 <footer>
-    <span data-de="&copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten"
-          data-en="&copy; 2026 Fictive Bank AG – All rights reserved">
-          &copy; 2026 Fiktive Bank AG – Alle Rechte vorbehalten
+    <span data-de="&copy; 2026 Genyra Bank AG – Alle Rechte vorbehalten"
+          data-en="&copy; 2026 Genyra Bank AG – All rights reserved">
+          &copy; 2026 Genyra Bank AG – Alle Rechte vorbehalten
     </span>
 </footer>
 
