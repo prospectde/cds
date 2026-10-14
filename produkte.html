@@ -165,7 +165,21 @@ footer{background:var(--gv)!important;color:#fff!important;}
 .lang-switch select{background:#fff!important;color:var(--gv)!important;border:1px solid rgba(255,255,255,.5)!important;}
 
 </style>
-    <script type="text/javascript" charset="utf-8">
+    
+    <script>
+        // Voice Co-browse: Sprache vor dem Genesys-Bootstrap festlegen.
+        // Der ausgewählte Wert wird seitenübergreifend gespeichert.
+        (function () {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language || navigator.userLanguage || 'de';
+            const activeLang = (savedLang || browserLang).toLowerCase().startsWith('en') ? 'en' : 'de';
+
+            document.documentElement.lang = activeLang;
+            window.GENYRA_UI_LANGUAGE = activeLang;
+        })();
+    </script>
+
+<script type="text/javascript" charset="utf-8">
     (function (g, e, n, es, ys) {
     g['_genesysJs'] = e;
     g[e] = g[e] || function () {
@@ -278,31 +292,14 @@ footer{background:var(--gv)!important;color:#fff!important;}
     </script>
     <script>
         function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-            applyLanguage(lang);
-            applyGenesysLanguage(lang);
+            const activeLang = lang && lang.startsWith('en') ? 'en' : 'de';
+            localStorage.setItem('preferredLanguage', activeLang);
+
+            // Voice Co-browse wird beim Seitenstart initialisiert.
+            // Deshalb Seite neu laden, damit Genesys die Sprache von Beginn an sieht.
+            window.location.reload();
         }
 
-        function applyGenesysLanguage(lang) {
-            const genesysLang = lang && lang.startsWith('en') ? 'en-us' : 'de';
-
-            if (typeof Genesys !== 'function') {
-                console.warn('Genesys Messenger is not available yet.');
-                return;
-            }
-
-            Genesys(
-                "command",
-                "Messenger.configure",
-                { config: { lang: genesysLang } },
-                function() {
-                    console.log("Genesys Messenger language updated:", genesysLang);
-                },
-                function(error) {
-                    console.error("Could not update Genesys Messenger language:", error);
-                }
-            );
-        }
 
         function applyLanguage(lang) {
             const activeLang = lang && lang.startsWith('en') ? 'en' : 'de';
@@ -322,8 +319,7 @@ footer{background:var(--gv)!important;color:#fff!important;}
         document.addEventListener('DOMContentLoaded', function() {
             const savedLang = localStorage.getItem('preferredLanguage');
             const browserLang = navigator.language || navigator.userLanguage || 'de';
-            applyLanguage(savedLang || browserLang);
-            applyGenesysLanguage(savedLang || browserLang);
+            applyLanguage(window.GENYRA_UI_LANGUAGE || savedLang || browserLang);
         });
     </script>
 </head>
